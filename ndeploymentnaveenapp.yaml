@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: naveenwebapp
+  labels:
+    name: webappdeploy
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: npod
+      labels:
+        name: webappdeployment
+        type: webapp-frontend
+    spec:
+      containers:
+        - name: naveenwebapp
+          image: naveen09/naveendockerrepo:latest
+  replicas: 1
+  selector:
+    matchLabels:
+      name: webappdeployment 

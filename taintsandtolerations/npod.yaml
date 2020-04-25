@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: naveenpod
+  labels:
+    name: webapp
+    type: webapp-frontend
+spec:
+  containers:
+    - name: naveen-nginx
+      image: nginx
+  tolerations:
+    - key: "app"
+      operator: "Equal"
+      value: "naveen"
+      effect: "NoSchedule"

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: worker-app-deployment
+  labels:
+    name: worker
+    type: backend
+spec:
+  template:
+    metadata:
+      name: worker-app-pod
+      labels:
+        name: worker-app-pod
+        type: worker-backend
+    spec:
+      containers:
+        - name: worker-app
+          image: dockersamples/examplevotingapp_worker
+  replicas: 1
+  selector:
+    matchLabels:
+      type: worker-backend

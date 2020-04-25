@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: naveenredis
+  labels:
+    name: webredis
+    type: backend
+spec:
+  template:
+    metadata:
+      name: nredispod
+      labels:
+        name: webredisdeployment
+        type: webapp-redis
+    spec:
+      containers:
+        - name: naveenredis
+          image: redis
+  replicas: 2
+  selector:
+    matchLabels:
+      name: webredisdeployment

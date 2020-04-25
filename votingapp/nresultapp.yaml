@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-service
+  labels:
+    name: resultapp
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: resultpod
+      labels:
+        name: resultapp
+        type: resultapp-frontend
+    spec:
+      containers:
+        - name: result-app
+          image: dockersamples/examplevotingapp_result
+  replicas: 2
+  selector:
+    matchLabels:
+      type: resultapp-frontend

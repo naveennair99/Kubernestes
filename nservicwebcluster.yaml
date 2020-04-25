@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: naveenwebfrontend
+  labels:
+    name: webapp
+    type: webapp-frontend
+spec:
+  type: ClusterIP
+  ports: 
+    - targetPort: 80
+      port: 80
+  selector: 
+    name: webappdeployment 

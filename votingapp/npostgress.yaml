@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-service
+  labels:
+    name: postgres
+    type: backend
+spec:
+  template:
+    metadata:
+      name: postgrespod
+      labels:
+        name: postgresdb
+        type: postgresdb-backend
+    spec:
+      containers:
+        - name: postgres-db
+          image: postgres:9.5
+          env:
+           - name: POSTGRES_HOST_AUTH_METHOD
+             value: "trust"
+  replicas: 1
+  selector:
+    matchLabels:
+      type: postgresdb-backend

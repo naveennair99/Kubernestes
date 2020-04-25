@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: naveenredispod
+spec:
+  containers:
+    - name: naveen-redis
+      image: redis
+  restartPolicy: OnFailure

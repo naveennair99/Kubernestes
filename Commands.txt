@@ -1,0 +1,4 @@
+kubectl taint nodes ip-172-31-35-73.ec2.internal app=naveen:NoExecute-
+kubectl taint nodes ip-172-31-35-73.ec2.internal app=naveen:NoExecute
+kubectl config set-context --namespace=default --current
+kubectl label nodes ip-172-31-35-73.ec2.internal size=Large
