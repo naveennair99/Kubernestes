@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: naveenreplicaset
+  labels:
+    name: webapp
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: npod
+      labels:
+        name: webapp
+        type: webapp-frontend
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx
+  selector:
+    matchLabels:
+      type: webapp-frontend
