@@ -3,4 +3,4 @@ kubectl taint nodes ip-172-31-35-73.ec2.internal app=naveen:NoExecute
 kubectl config set-context --namespace=default --current
 kubectl label nodes ip-172-31-35-73.ec2.internal size=Large
 kubectl run --restart=Never --image=busybox static-busybox --dry-run -o yaml --command -- sleep 1000 > /etc/kubernetes/manifests/static-busybox.yaml
-git remote add naveencodecommit https://git-codecommit.us-east-1.amazonaws.com/v1/repos/Naveenk8s-repo
+git remote add naveencodecommit https://git-codecommit.us-east-1.amazonaws.com/v1/repos/Naveenk8s-repo.
