@@ -9,4 +9,3 @@ spec:
     - digital signature
     - key encipherment
     - server auth
-  request: 
