@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: privatenginx-pod
+  labels:
+    name: webapp
+    type: webapp-frontend
+spec:
+  containers:
+    - name: naveen-nginx
+      image: naveendockerreg.com/my-nginx 
+  imagePullSecrets:
+    - name: regcred
